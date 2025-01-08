@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<odoo>
+    <!-- Creating a new extension template to edit an already existing template -->
+    <record id="view_res_partner_form_inherit_origamis" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit.origamis</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group//group[2]//field[@name='title']" position="after">
+                <field name="salutation" invisible="is_company"/>
+                <field name="form_of_address" invisible="is_company"/>
+                <field name="generated_salutation" invisible="is_company"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
